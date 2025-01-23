@@ -1,0 +1,89 @@
+/* src/styles/SignDictionary.css */
+
+.sign-dictionary {
+  display: flex;
+  flex-direction: row; /* Exibe os botões das letras na lateral */
+  align-items: flex-start; /* Alinha os itens no início da tela */
+  height: 100vh; /* Faz o container ocupar a altura total da tela */
+}
+
+.letter-list {
+  width: 100px; /* Define uma largura fixa para a coluna de letras */
+  text-align: center;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-right: 1px solid #ddd; /* Adiciona uma borda para separar a coluna */
+}
+
+.letter-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.letter-list li {
+  margin: 10px 0;
+  padding: 8px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.letter-list li:hover {
+  background-color: #0056b3;
+}
+
+.word-list {
+  flex: 1; /* Ocupa o espaço restante */
+  margin-left: 20px;
+  text-align: left;
+}
+
+.word-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.word-list li {
+  margin: 10px 0;
+  padding: 8px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.word-list li:hover {
+  background-color: #0056b3;
+}
+
+.sign-details {
+  flex: 2; /* Prioriza espaço maior para o conteúdo central */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.sign-media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.sign-image {
+  width: 200px;
+  height: auto;
+}
+
+.sign-video {
+  width: 400px;
+  height: 225px;
+}

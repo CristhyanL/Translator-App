@@ -1,0 +1,70 @@
+/* Container principal */
+.translator-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Título */
+  .translator-container h2 {
+    margin-bottom: 20px;
+  }
+  
+  /* Input e botão */
+  .translator-input-container {
+    margin-bottom: 20px;
+  }
+  
+  .translator-input {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .translator-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .translator-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Imagens traduzidas */
+  .translator-images {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .translator-sign {
+    text-align: center;
+  }
+  
+  .translator-sign img {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .translator-sign p {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  
+  /* Espaço entre palavras */
+  .translator-space {
+    width: 20px;
+    height: 20px;
+  }
+  
