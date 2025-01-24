@@ -1,3 +1,4 @@
+/* Estilo geral do cabeçalho */
 .header {
   text-align: center;
   background-color: #004C92;
@@ -7,11 +8,12 @@
 
 .nav-center {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Espaça os elementos extremos (logo e botão hambúrguer) */
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  position: relative;
 }
 
 .nav-header {
@@ -23,16 +25,10 @@
   height: 50px;
 }
 
-.nav-toggle {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
+/* Links para telas grandes */
 .links-container {
   display: flex;
+  gap: 20px;
 }
 
 .links {
@@ -48,10 +44,6 @@
   font-weight: bold;
 }
 
-.scroll-link {
-  cursor: pointer;
-}
-
 .links button {
   background: none;
   border: none;
@@ -63,11 +55,49 @@
   padding: 10px;
 }
 
-/* Responsividade */
+.scroll-link {
+  cursor: pointer;
+}
+
+/* Botão hambúrguer */
+.nav-toggle {
+  display: none; /* Escondido por padrão */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem; /* Maior para ficar mais visível */
+  cursor: pointer;
+  position: absolute;
+  right: 20px; /* Mantém no canto direito */
+  top: 50%;
+  transform: translateY(-50%); /* Centraliza verticalmente */
+  z-index: 15; /* Coloca o botão acima de outros elementos */
+}
+
+/* Responsividade para telas menores */
 @media (max-width: 768px) {
-  .nav-center {
-    flex-direction: column;
-    align-items: flex-start;
+  .nav-toggle {
+    display: block; /* Mostra o botão hambúrguer */
+  }
+
+  /* Links escondidos por padrão em telas pequenas */
+  .links-container {
+    display: none;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #004C92;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  align-items: center;
+  }
+
+  .links-container.show-links {
+    display: flex; /* Mostra o menu quando ativado */
   }
 
   .links {
@@ -75,8 +105,14 @@
     gap: 15px;
   }
 
-  .nav-toggle {
-    display: block;
+  .links button {
+    font-size: 1rem;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .nav-center {
+    position: relative;
   }
 
   .logo {
@@ -85,19 +121,15 @@
 }
 
 @media (max-width: 480px) {
-  .nav-center {
-    padding: 0 10px;
-  }
-
-  .links {
-    gap: 10px;
-  }
-
   .logo {
     height: 30px;
   }
 
   .nav-toggle {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
+  }
+
+  .links button {
+    font-size: 0.9rem;
   }
 }
