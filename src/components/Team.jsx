@@ -2,11 +2,11 @@ import React from "react";
 import "../styles/Team.css"; // Estilos específicos para o componente Team
 
 const teamMembers = [
-  { name: "Arthur Nunes", email: "arthurnunes@iduff.com", image: "../images/Arthur.jpg" },
-  { name: "Cristhyan Lima", email: "cristhyanlima@iduff.com", image: "../images/Cris.jpg" },
-  { name: "Igor Burns", email: "iburns@iduff.com", image: "../images/Igor.jpg" },
-  { name: "Matheus Fossi", email: "mfossi@iduff.com", image: "../images/Matheus.jpg" },
-  { name: "Victor Garcia", email: "victorcalbo@iduff.com", image: "../images/Victor.jpg" },
+  { name: "Arthur Nunes", email: "arthurnunes@iduff.com", image: "./public/images/Arthur.jpg" },
+  { name: "Cristhyan Lima", email: "cristhyanlima@iduff.com", image: "./public/images/Cris.jpg" },
+  { name: "Igor Burns", email: "iburns@iduff.com", image: "./public/images/Igor.jpg" },
+  { name: "Matheus Fossi", email: "mfossi@iduff.com", image: "./public/images/Matheus.jpg" },
+  { name: "Victor Garcia", email: "victorcalbo@iduff.com", image: "./public/images/Victor.jpg" },
 ];
 
 const Team = () => {
