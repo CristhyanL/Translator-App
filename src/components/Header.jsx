@@ -8,7 +8,7 @@ const Header = ({ setActiveTab }) => {
         <div className="nav-center">
           {/* Cabeçalho da navegação */}
           <div className="nav-header">
-              <img src="../public\images\libras.jpeg" alt="logo" className="logo" />
+              <img src="../images/libras.jpeg" alt="logo" className="logo" />
           </div>
 
           {/* Links de navegação */}
