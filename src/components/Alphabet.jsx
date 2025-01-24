@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Alphabet.css"; // Importe o arquivo CSS
+import "C:/Users/crist/translator-app/public/styles/Alphabet.css"; // Importe o arquivo CSS
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 

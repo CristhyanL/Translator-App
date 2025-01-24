@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/Translator.css";
+import "C:/Users/crist/translator-app/public/styles/Translator.css";
 
 // Dicionário de palavras e sinais
 const dictionary = {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/SignDictionary.css";
+import "C:/Users/crist/translator-app/public/styles/SignDictionary.css";
 
 const dictionary = {
   // Dados mantidos como no exemplo anterior
