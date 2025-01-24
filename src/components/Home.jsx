@@ -1,5 +1,5 @@
 import React from "react";
-import "C:/Users/crist/OneDrive/Área de Trabalho/translator-app/public/styles/Home.css"; // Estilo para a tab inicial
+import "../styles/Home.css"; // Estilo para a tab inicial
 
 const Home = ({ setActiveTab }) => {
   return (

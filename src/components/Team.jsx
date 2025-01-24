@@ -1,5 +1,5 @@
 import React from "react";
-import "C:/Users/crist/OneDrive/Área de Trabalho/translator-app/public/styles/Team.css"; // Estilos específicos para o componente Team
+import "../styles/Team.css"; // Estilos específicos para o componente Team
 
 const teamMembers = [
   { name: "Arthur Nunes", email: "arthurnunes@iduff.com", image: "Arthur.jpg" },

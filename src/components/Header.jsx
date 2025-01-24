@@ -1,5 +1,5 @@
 import React from "react";
-import "C:/Users/crist/OneDrive/Área de Trabalho/translator-app/public/styles/Header.css"; // Importando o arquivo de estilos
+import "../styles/Header.css"; // Importando o arquivo de estilos
 
 const Header = ({ setActiveTab }) => {
   return (
