@@ -1,12 +1,12 @@
 import React from "react";
-import "C:/Users/crist/translator-app/public/styles/Footer.css"; // Importando o CSS
+import "C:/Users/crist/OneDrive/Área de Trabalho/translator-app/public/styles/Footer.css"; // Importando o CSS
 
 const Footer = () => {
   return (
     <footer className="footer">
       {/* Logotipo da UFF */}
       <img
-        src="./Public/Images/logo uff branco.svg"
+        src="C:/Users/crist/OneDrive/Área de Trabalho/translator-app/public/images/logo uff branco.svg"
         alt="Logotipo da UFF"
         className="footer-logo"
       />
@@ -17,7 +17,7 @@ const Footer = () => {
       </p>
       {/* Logotipo da Engenharia */}
       <img
-        src="./Public/Images/logo engenharia.png"
+        src="C:/Users/crist/OneDrive/Área de Trabalho/translator-app/public/images/logo engenharia.png"
         alt="Logotipo da Engenharia"
         className="footer-logo"
       />

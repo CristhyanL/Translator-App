@@ -1,50 +1,86 @@
 import React, { useState } from "react";
-import "C:/Users/crist/translator-app/public/styles/SignDictionary.css";
+import "C:/Users/crist/OneDrive/Área de Trabalho/translator-app/public/styles/SignDictionary.css";
 
 const dictionary = {
   // Dados mantidos como no exemplo anterior
   A: [
+    { word: "Abril", signImage: "A_Abril.jpg", signGif: "A_Abril.mp4" },
+    { word: "Agosto", signImage: "A.jpg", signGif: "A_Agosto.mp4" },
     { word: "Amigo", signImage: "A_Amigo.jpg", signGif: "A_Amigo.mp4" },
-    { word: "Amor", signImage: "A_Amor.jpg", signGif: "A_Amor.mp4" },
+    { word: "Amor", signImage: "C.jpg", signGif: "A_Amor.mp4" },
+    { word: "Ano", signImage: "S.jpg", signGif: "A_Ano.mp4" },
     { word: "Arroz", signImage: "A_Arroz.jpg", signGif: "A_Arroz.mp4" },
   ],
   B: [
     { word: "Bola", signImage: "B_Bola.jpg", signGif: "B_Bola.mp4" },
-    { word: "Bicho", signImage: "B_Bicho.jpg", signGif: "B_Bicho.mp4" },
+    { word: "Bicho", signImage: "B_Bola.jpg", signGif: "B_Bicho.mp4" },
   ],
   C: [
     { word: "Casa", signImage: "C_Casa.jpg", signGif: "C_Casa.mp4" },
-    {word: "Cachorro", signImage: "C_Cachorro.jpg", signGif: "C_Cachorro.mp4"}
+    { word: "Calendário", signImage: "C_Casa.jpg", signGif: "C_Calendário.mp4" },
+    {word: "Cachorro", signImage: "C_Cachorro.jpg", signGif: "C_Cachorro.mp4"},
+    {word: "Cálculo", signImage: "C.jpg", signGif: "C_Cálculo.mp4"},
+    {word: "Calculadora", signImage: "C.jpg", signGif: "C_Cálculo.mp4"},
   ],
   D: [
     { word: "Dança", signImage: "D_Dança.jpg", signGif: "D_Dança.mp4" },
-    { word: "Dente", signImage: "D_Dente.jpg", signGif: "D_Dente.mp4" }
+    { word: "Dente", signImage: "X.jpg", signGif: "D_Dente.mp4" },
+    { word: "Dezembro", signImage: "B_Bola.jpg", signGif: "D_Dezembro.mp4" },
   ],
   E: [
     { word: "Elefante", signImage: "E_Elefante.jpg", signGif: "E_Elefante.mp4"},
-    { word: "Escola", signImage: "E_Escola.jpg", signGif: "E_Escola.mp4" }
+    { word: "Escola", signImage: "E_Escola.jpg", signGif: "E_Escola.mp4" },
+    { word: "Engenharia", signImage: "C.jpg", signGif: "E_Engenharia.mp4" },
+    { word: "Engenheiro", signImage: "C.jpg", signGif: "E_Engenharia.mp4" },
+    { word: "Estudar", signImage: "E_Escola.jpg", signGif: "E_Estudar.mp4" },
   ],
-  F: [{ word: "Faca", signImage: "F_Faca.jpg", signGif: "F_Faca.mp4" }],
+  F: [
+    { word: "Faca", signImage: "N.jpg", signGif: "F_Faca.mp4" },
+    { word: "Fevereiro", signImage: "F.jpg", signGif: "F_Fevereiro.mp4" }
+  ],
   G: [{ word: "Gato", signImage: "G_Gato.jpg", signGif: "G_Gato.mp4" }],
-  H: [{ word: "Hora", signImage: "H_Hora.jpg", signGif: "H_Hora.mp4" }],
+  H: [{ word: "Hora", signImage: "L.jpg", signGif: "H_Hora.mp4" }],
   I: [{ word: "Igreja", signImage: "I_Igreja.jpg", signGif: "I_Igreja.mp4" }],
-  J: [{ word: "Janela", signImage: "J_Janela.jpg", signGif: "J_Janela.mp4" }],
+  J: [
+    { word: "Janela", signImage: "J_Janela.jpg", signGif: "J_Janela.mp4" },
+    { word: "Janeiro", signImage: "J.jpg", signGif: "J_Janeiro.mp4" },
+    { word: "Junho", signImage: "J_Junho.jpg", signGif: "J_Junho.mp4" },
+    { word: "Julho", signImage: "J_Junho.jpg", signGif: "J_Julho.mp4" },
+  ],
   K: [],
   L: [{ word: "Lápis", signImage: "L_Lápis.jpg", signGif: "L_Lápis.mp4" }],
-  M: [{word: "Mecânico", signImage: "M_Mecânico.jpg", signGif: "M_Mecânico.mp4"}],
-  N: [{ word: "Nariz", signImage: "N_Nariz.jpg", signGif: "N_Nariz.mp4" }],
-  O: [{ word: "Olho", signImage: "O_Olho.jpg", signGif: "O_Olho.mp4" }],
-  P: [{ word: "Pão", signImage: "P_Pão.jpg", signGif: "P_Pão.mp4" }],
-  Q: [{ word: "Queijo", signImage: "Q_Queijo.jpg", signGif: "Q_Queijo.mp4" }],
-  R: [{ word: "Rato", signImage: "R_Rato.jpg", signGif: "R_Rato.mp4" }],
-  S: [{ word: "Sapo", signImage: "S_Sapo.jpg", signGif: "S_Sapo.mp4" }],
-  T: [ {word: "Tatuagem",signImage: "T_Tatuagem.jpg",signGif: "T_Tatuagem.mp4"}],
-  U: [{word: "Universidade",signImage: "U_Universidade.jpg",signGif: "U_Universidade.mp4"}],
+  M: [
+    {word: "Mecânico", signImage: "Z.jpg", signGif: "M_Mecânico.mp4"},
+    {word: "Março", signImage: "A.jpg", signGif: "M_Março.mp4"},
+    {word: "Maio", signImage: "M_Maio.jpg", signGif: "M_Maio.mp4"},
+    {word: "Matemática", signImage: "M.jpg", signGif: "M_Matemática.mp4"},
+  ],
+  N: [
+    { word: "Nariz", signImage: "Z.jpg", signGif: "N_Nariz.mp4" },
+    { word: "Novembro", signImage: "N.jpg", signGif: "N_Novembro.mp4" },
+  ],
+  O: [
+    { word: "Olho", signImage: "Z.jpg", signGif: "O_Olho.mp4" },
+    { word: "Outubro", signImage: "O.jpg", signGif: "O_Outubro.mp4" },
+
+  ],
+  P: [
+    { word: "Pão", signImage: "P_Pão.jpg", signGif: "P_Pão.mp4" },
+    { word: "Professor", signImage: "P_Professor.jpg", signGif: "P_Professor.mp4" },
+  ],
+  Q: [{ word: "Queijo", signImage: "L.jpg", signGif: "Q_Queijo.mp4" }],
+  R: [{ word: "Rato", signImage: "L_Lápis.jpg", signGif: "R_Rato.mp4" }],
+  S: [
+    { word: "Sapo", signImage: "S_Sapo.jpg", signGif: "S_Sapo.mp4" },
+    { word: "Setembro", signImage: "L_Lápis.jpg", signGif: "S_Setembro.mp4" },
+  ],
+  T: [ {word: "Tatuagem",signImage: "L_Lápis.jpg",signGif: "T_Tatuagem.mp4"}],
+  U: [{word: "Universidade",signImage: "U.jpg",signGif: "U_Universidade.mp4"}],
   V: [{ word: "Vapor", signImage: "V_Vapor.jpg", signGif: "V_Vapor.mp4" }],
   W: [],
   X: [{ word: "Xícara", signImage: "X_Xícara.jpg", signGif: "X_Xícara.mp4" }],
   Y: [],
-  Z: [{ word: "Zoológico", signImage: "Z_Zoológico.jpg", signGif: "Z_Zoológico.mp4" }]
+  Z: [{ word: "Zoológico", signImage: "Z.jpg", signGif: "Z_Zoológico.mp4" }]
 };
 
 const SignDictionary = () => {
