@@ -1,89 +1,112 @@
-/* src/styles/SignDictionary.css */
-
-.sign-dictionary {
-  display: flex;
-  flex-direction: row; /* Exibe os botões das letras na lateral */
-  align-items: flex-start; /* Alinha os itens no início da tela */
-  height: 100vh; /* Faz o container ocupar a altura total da tela */
+/* Layout da grade das letras */
+.letter-grid {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
 }
 
-.letter-list {
-  width: 100px; /* Define uma largura fixa para a coluna de letras */
-  text-align: center;
+.letter-button {
   padding: 10px;
-  background-color: #f4f4f4;
-  border-right: 1px solid #ddd; /* Adiciona uma borda para separar a coluna */
-}
-
-.letter-list ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.letter-list li {
-  margin: 10px 0;
-  padding: 8px;
   background-color: #007bff;
   color: white;
-  cursor: pointer;
+  border: none;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 16px;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
-.letter-list li:hover {
+.letter-button:hover {
   background-color: #0056b3;
 }
 
+/* Estilo da lista de palavras */
 .word-list {
-  flex: 1; /* Ocupa o espaço restante */
-  margin-left: 20px;
-  text-align: left;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .word-list ul {
   list-style-type: none;
   padding: 0;
-  margin: 0;
 }
 
 .word-list li {
-  margin: 10px 0;
-  padding: 8px;
+  display: inline-block;
+  margin: 5px 10px;
+  padding: 8px 12px;
   background-color: #007bff;
   color: white;
-  cursor: pointer;
   border-radius: 5px;
-  font-size: 14px;
+  cursor: pointer;
 }
 
 .word-list li:hover {
   background-color: #0056b3;
 }
 
+/* Detalhes do sinal */
 .sign-details {
-  flex: 2; /* Prioriza espaço maior para o conteúdo central */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  margin-top: 20px;
 }
 
 .sign-media {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: 20px;
   margin-top: 20px;
 }
 
 .sign-image {
-  width: 200px;
+  width: 250px;
   height: auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
 }
 
-.sign-video {
+.sign-gif {
   width: 400px;
-  height: 225px;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+  .letter-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .sign-media {
+    flex-direction: column;
+  }
+
+  .sign-image,
+  .sign-gif {
+    width: 100%;
+  }
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 480px) {
+  .letter-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .word-list li {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .sign-image,
+  .sign-gif {
+    width: 80%;
+  }
 }

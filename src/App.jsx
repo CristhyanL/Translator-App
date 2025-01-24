@@ -1,40 +1,24 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
+import Home from "./components/Home"; // Importação da nova tab inicial
 import Translator from "./components/Translator";
-import Footer from "./components/Footer";
 import Alphabet from "./components/Alphabet";
-import SignDictionary from "./components/signDictionary";
+import SignDictionary from "./components/SignDictionary";
+import Team from "./components/Team";
+import Footer from "./components/Footer";
 
 const App = () => {
-  const [activeTab, setActiveTab] = useState("translator");
+  const [activeTab, setActiveTab] = useState("home"); // Define "home" como a tab padrão
 
   return (
     <div>
-      <Header />
-      <nav className="app-nav">
-        <button
-          onClick={() => setActiveTab("translator")}
-          className={`nav-button ${activeTab === "translator" ? "active-tab" : ""}`}
-        >
-          Tradutor
-        </button>
-        <button
-          onClick={() => setActiveTab("alphabet")}
-          className={`nav-button ${activeTab === "alphabet" ? "active-tab" : ""}`}
-        >
-          Aprenda o Alfabeto
-        </button>
-        <button
-          onClick={() => setActiveTab("signDictionary")}
-          className={`nav-button ${activeTab === "signDictionary" ? "active-tab" : ""}`}
-        >
-          Dicionário de Sinais
-        </button>
-      </nav>
+      <Header setActiveTab={setActiveTab} />
       <main>
+        {activeTab === "home" && <Home setActiveTab={setActiveTab} />}
         {activeTab === "translator" && <Translator />}
         {activeTab === "alphabet" && <Alphabet />}
-        {activeTab === "signDictionary" && <SignDictionary />} {/* Exibição do dicionário */}
+        {activeTab === "signDictionary" && <SignDictionary />}
+        {activeTab === "team" && <Team />}
       </main>
       <Footer />
     </div>

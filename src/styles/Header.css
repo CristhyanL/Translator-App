@@ -1,8 +1,103 @@
-/* Estilo para o Header */
 .header {
-    text-align: center;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
+  text-align: center;
+  background-color: #004C92;
+  color: white;
+  padding: 20px 0;
+}
+
+.nav-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+}
+
+.nav-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.links-container {
+  display: flex;
+}
+
+.links {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.scroll-link {
+  cursor: pointer;
+}
+
+.links button {
+  background: none;
+  border: none;
+  color: #dce1e4;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .nav-center {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
+
+  .links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .logo {
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-center {
+    padding: 0 10px;
+  }
+
+  .links {
+    gap: 10px;
+  }
+
+  .logo {
+    height: 30px;
+  }
+
+  .nav-toggle {
+    font-size: 1.2rem;
+  }
+}

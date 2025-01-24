@@ -1,46 +1,27 @@
 import React from "react";
+import "../styles/Alphabet.css"; // Importe o arquivo CSS
 
-// Alfabeto em Libras
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
 const Alphabet = () => {
   return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
-      <h2>Aprenda o Alfabeto em Libras</h2>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)", // 4 itens por linha
-          gap: "30px", // Espaçamento entre itens
-          justifyItems: "center",
-        }}
-      >
+    <div>
+      <h2 className="texto">Aprenda o Alfabeto em Libras</h2>
+      <div className="alphabet-grid">
         {letters.map((letter) => (
-          <div
-            key={letter}
-            style={{
-              textAlign: "center",
-              padding: "15px",
-              border: "1px solid #ddd",
-              borderRadius: "8px",
-              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-              width: "150px",
-            }}
-          >
+          <div key={letter} className="letter-card">
             <h3>{letter}</h3>
-            {/* Imagem da letra */}
             <img
               src={`/assets/signs/${letter}.jpg`}
               alt={`Letra ${letter} em Libras`}
-              style={{ width: "100px", height: "100px", marginBottom: "10px" }}
+              className="letter-img"
             />
-            {/* Vídeo do gesto */}
             <video
               src={`/assets/gifs/${letter}.mp4`}
               autoPlay
               loop
               muted
-              style={{ width: "120px", height: "120px", borderRadius: "5px" }}
+              className="letter-video"
             >
               Seu navegador não suporta vídeos.
             </video>
@@ -52,3 +33,4 @@ const Alphabet = () => {
 };
 
 export default Alphabet;
+

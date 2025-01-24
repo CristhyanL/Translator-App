@@ -1,9 +1,8 @@
-// src/components/SignDictionary.jsx
 import React, { useState } from "react";
 import "../styles/SignDictionary.css";
 
-// Dados de exemplo para as letras e palavras com o mapeamento direto de imagem e gif
 const dictionary = {
+  // Dados mantidos como no exemplo anterior
   A: [
     { word: "Amigo", signImage: "A_Amigo.jpg", signGif: "A_Amigo.mp4" },
     { word: "Amor", signImage: "A_Amor.jpg", signGif: "A_Amor.mp4" },
@@ -54,7 +53,7 @@ const SignDictionary = () => {
 
   const handleLetterClick = (letter) => {
     setSelectedLetter(letter);
-    setSelectedWord(null); // Resetar a palavra selecionada
+    setSelectedWord(null); // Resetar a palavra selecionada ao mudar a letra
   };
 
   const handleWordClick = (item) => {
@@ -63,23 +62,28 @@ const SignDictionary = () => {
 
   return (
     <div className="sign-dictionary">
-      <div className="letter-list">
-        <h2>Escolha uma letra</h2>
-        <ul>
-          {Object.keys(dictionary).map((letter) => (
-            <li key={letter} onClick={() => handleLetterClick(letter)}>
-              {letter}
-            </li>
-          ))}
-        </ul>
+      <div className="info-text">
+        <p>Clique em uma letra para ter acesso às palavras que iniciam com ela.</p>
+      </div>
+
+      <div className="letter-grid">
+        {Object.keys(dictionary).map((letter, index) => (
+          <button
+            key={index}
+            className="letter-button"
+            onClick={() => handleLetterClick(letter)}
+          >
+            {letter}
+          </button>
+        ))}
       </div>
 
       {selectedLetter && (
         <div className="word-list">
           <h2>Palavras com a letra "{selectedLetter}"</h2>
           <ul>
-            {dictionary[selectedLetter].map((item) => (
-              <li key={item.word} onClick={() => handleWordClick(item)}>
+            {dictionary[selectedLetter].map((item, idx) => (
+              <li key={idx} onClick={() => handleWordClick(item)}>
                 {item.word}
               </li>
             ))}
@@ -87,37 +91,38 @@ const SignDictionary = () => {
         </div>
       )}
 
-      {selectedWord && (
-        <div className="sign-details">
-          <h3>Detalhes da palavra: {selectedWord.word}</h3>
-          <div className="sign-media">
-            {/* Imagem do sinal */}
-            {selectedWord.signImage && (
-              <img
-                src={`/assets/signs/${selectedWord.signImage}`}
-                alt={`Sinal para ${selectedWord.word}`}
-                className="sign-image"
-              />
-            )}
-            {/* Gif do sinal (no formato .mp4) */}
-            {selectedWord.signGif && (
-              <video
-                key={selectedWord.signGif} // Adicionando key para forçar a re-renderização
-                autoPlay
-                loop
-                muted
-                className="sign-gif"
-              >
-                <source
-                  src={`/assets/gifs/${selectedWord.signGif}`}
-                  type="video/mp4"
-                />
-                Seu navegador não suporta vídeos.
-              </video>
-            )}
-          </div>
-        </div>
+{selectedWord && (
+  <div className="sign-details">
+    <h3>Detalhes da palavra: {selectedWord.word}</h3>
+    <div className="sign-media">
+      {/* Exibe a imagem do sinal */}
+      {selectedWord.signImage && (
+        <img
+          src={`/assets/signs/${selectedWord.signImage}`}
+          alt={`Sinal para ${selectedWord.word}`}
+          className="sign-image"
+        />
       )}
+      {/* Exibe o vídeo do sinal (GIF) */}
+      {selectedWord.signGif && (
+        <video
+          key={selectedWord.signGif}
+          autoPlay
+          loop
+          muted
+          className="sign-gif"
+        >
+          <source
+            src={`/assets/gifs/${selectedWord.signGif}`}
+            type="video/mp4"
+          />
+          Seu navegador não suporta vídeos.
+        </video>
+      )}
+    </div>
+  </div>
+)}
+
     </div>
   );
 };
