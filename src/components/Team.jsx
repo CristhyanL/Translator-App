@@ -1,17 +1,12 @@
 import React from "react";
-import "../styles/Team.css";
-import ArthurImage from '../images/Arthur.jpg';
-import CrisImage from '../images/Cris.jpg';
-import IgorImage from '../images/Igor.jpg';
-import MatheusImage from '../images/matheus.jpg';
-import VictorImage from '../images/Victor.jpg';
+import "../styles/Team.css"; // Estilos específicos para o componente Team
 
 const teamMembers = [
-  { name: "Arthur Nunes", email: "arthurnunes@iduff.com", image: ArthurImage },
-  { name: "Cristhyan Lima", email: "cristhyanlima@iduff.com", image: CrisImage },
-  { name: "Igor Burns", email: "iburns@iduff.com", image: IgorImage },
-  { name: "Matheus Fossi", email: "mfossi@iduff.com", image: MatheusImage },
-  { name: "Victor Garcia", email: "victorcalbo@iduff.com", image: VictorImage },
+  { name: "Arthur Nunes", email: "arthurnunes@iduff.com", image: "/images/Arthur.jpg" },
+  { name: "Cristhyan Lima", email: "cristhyanlima@iduff.com", image: "/images/Cris.jpg" },
+  { name: "Igor Burns", email: "iburns@iduff.com", image: "/images/Igor.jpg" },
+  { name: "Matheus Fossi", email: "mfossi@iduff.com", image: "/images/matheus.jpg" },
+  { name: "Victor Garcia", email: "victorcalbo@iduff.com", image: "/images/Victor.jpg" },
 ];
 
 const Team = () => {
@@ -22,7 +17,7 @@ const Team = () => {
         {teamMembers.map((member, index) => (
           <div key={index} className="team-member">
             <img
-              src={`./Public/images/${member.image}`}
+              src={member.image}
               alt={member.name}
               className="team-member-image"
             />
@@ -36,3 +31,4 @@ const Team = () => {
 };
 
 export default Team;
+
